@@ -1,8 +1,8 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   <component :is="componenteVariable">
-    <h2>Contenido especial</h2>
+    <h2 v-if="showContent" >Contenido especial</h2>
   </component>
 </template>
 
@@ -20,7 +20,8 @@ export default {
   },
   data(){
     return{
-      componenteVariable: "OtroComponenteImportado"
+      showContent: false,
+      componenteVariable: "ComponenteImportado",
     }
   }
 }
@@ -28,6 +29,11 @@ export default {
 
 <style>
 #app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -35,4 +41,10 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+[alt="Vue logo"]{
+  width: 200px;
+  height: 200px;
+}
+
 </style>
