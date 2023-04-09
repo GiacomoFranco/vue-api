@@ -1,21 +1,27 @@
 <template>
-  <button @click="show = !show">Menu</button>
-  <transition name="fade">
-    <Menu v-show="show"/>
-  </transition>
+  <div v-if="isMenu">
+    <button @click="show = !show">Menu</button>
+    <transition name="fade">
+      <Menu v-show="show"/>
+    </transition>
+  </div>
+  <Modal/>
 </template>
 
 <script>
 import Menu from './Menu.vue';
+import Modal from './Modal.vue';
 
 export default {
   name: 'HelloWorld',
   components: {
-    Menu
-  },
+    Menu,
+    Modal
+},
   data() {
     return {
       show: false,
+      isMenu: true,
     }
   },
 }
