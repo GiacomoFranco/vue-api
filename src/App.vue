@@ -1,17 +1,25 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <component :is="componenteVariable"></component>
 </template>
 
 <script>
 import { defineAsyncComponent } from 'vue';
 
 const HelloWorld = defineAsyncComponent(() => import('./components/HelloWorld.vue'))
+import NuevoComponente from './components/NuevoComponente.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ComponenteImportado: HelloWorld,
+    OtroComponenteImportado: NuevoComponente
+  },
+  data(){
+    return{
+      componenteVariable: "OtroComponenteImportado"
+    }
   }
 }
 </script>
