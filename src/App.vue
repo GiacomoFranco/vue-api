@@ -1,7 +1,9 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
-  <component :is="componenteVariable"></component>
+  <component :is="componenteVariable">
+    <h2>Contenido especial</h2>
+  </component>
 </template>
 
 <script>
